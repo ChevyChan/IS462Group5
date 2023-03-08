@@ -38,10 +38,11 @@ public class animationStateController : MonoBehaviour
             animator.SetBool("isRunning", false);
             animator.SetBool("isWalking", true);
         }
-        // var lookPos = target.transform.position - transform.position;
-        // var rotation = Quaternion.LookRotation(lookPos);
-        // transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 2);
-        //transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 10F * Time.deltaTime);
+        //var lookPos = target.transform.position - transform.position;
+        //var rotation = Quaternion.LookRotation(lookPos);
+        //rotation.y = 0;
+        //transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 2);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 10F * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision other)
